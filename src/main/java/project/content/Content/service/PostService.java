@@ -29,7 +29,7 @@ public class PostService {
         existingPost.setTitle(post.getTitle());
         existingPost.setAuthors(post.getAuthors());
         existingPost.setText(post.getText());
-        repository.save(post);
+        repository.save(existingPost);
     }
 
     void deleteById(Integer id) {
