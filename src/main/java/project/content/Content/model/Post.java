@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
@@ -19,6 +20,7 @@ public class Post {
     private int id;
 
     @NotNull
+    @ManyToMany
     private List<Author> authors;
 
     @NotNull
