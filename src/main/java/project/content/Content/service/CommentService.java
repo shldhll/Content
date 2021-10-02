@@ -12,25 +12,25 @@ public class CommentService {
     @Autowired
     private CommentRepository repository;
 
-    void addComment(Comment comment) {
-        repository.save(comment);
+    public Comment addComment(Comment comment) {
+        return repository.save(comment);
     }
 
-    Comment getCommentById(Integer id) {
+    public Comment getCommentById(Integer id) {
         return repository.findById(id).orElse(null);
     }
 
-    List<Comment> getComments() {
-        return repository.findAll();
+    public List<Comment> getCommentsByPostId(Integer postId) {
+        return repository.findByPostId(postId);
     }
 
-    void updateComment(Comment comment) {
+    public Comment updateComment(Comment comment) {
         Comment existingComment = getCommentById(comment.getId());
         existingComment.setText(comment.getText());
-        repository.save(existingComment);
+        return repository.save(existingComment);
     }
 
-    void deleteById(Integer id) {
+    public void deleteById(Integer id) {
         repository.deleteById(id);
     }
 }
