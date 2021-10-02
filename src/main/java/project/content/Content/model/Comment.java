@@ -3,6 +3,7 @@ package project.content.Content.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import project.content.Content.exception.ErrorCodes;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -20,14 +21,14 @@ public class Comment {
 
     private int parentId;
 
-    @NotNull
+    @NotNull(message = ErrorCodes.ERR_ID_MISSING)
     private int postId;
 
-    @NotNull
+    @NotNull(message = ErrorCodes.ERR_AUTHOR_MISSING)
     @ManyToOne
     private Author author;
 
-    @NotNull
+    @NotNull(message = ErrorCodes.ERR_TEXT_MISSING)
     private String text;
 
     private Date postedAt;
