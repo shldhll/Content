@@ -32,7 +32,7 @@ public class PostService {
         return repository.save(existingPost);
     }
 
-    public void deleteById(Integer id) {
+    public void deletePost(Integer id) {
         repository.deleteById(id);
     }
 }

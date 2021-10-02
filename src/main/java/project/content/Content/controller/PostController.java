@@ -38,7 +38,7 @@ public class PostController {
 
     @DeleteMapping
     public String deletePost(@PathVariable Integer id) {
-        service.deleteById(id);
+        service.deletePost(id);
         return "post deleted";
     }
 }

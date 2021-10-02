@@ -30,7 +30,7 @@ public class CommentService {
         return repository.save(existingComment);
     }
 
-    public void deleteById(Integer id) {
+    public void deleteComment(Integer id) {
         repository.deleteById(id);
     }
 }

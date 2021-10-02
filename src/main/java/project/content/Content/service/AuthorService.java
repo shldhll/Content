@@ -12,8 +12,8 @@ public class AuthorService {
     @Autowired
     private AuthorRepository repository;
 
-    public void addAuthor(Author author) {
-        repository.save(author);
+    public Author addAuthor(Author author) {
+        return repository.save(author);
     }
 
     public Author getAuthorById(Integer id) {
@@ -24,11 +24,11 @@ public class AuthorService {
         return repository.findAll();
     }
 
-    public void updateAuthor(Author author) {
+    public Author updateAuthor(Author author) {
         Author existingAuthor = getAuthorById(author.getId());
         existingAuthor.setName(author.getName());
         existingAuthor.setProfileUrl(author.getProfileUrl());
-        repository.save(existingAuthor);
+        return repository.save(existingAuthor);
     }
 
     public void deleteAuthor(Integer id) {

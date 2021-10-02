@@ -38,6 +38,6 @@ public class CommentController {
 
     @DeleteMapping("/{id}")
     public void deleteComment(@PathVariable Integer id) {
-        service.deleteById(id);
+        service.deleteComment(id);
     }
 }
